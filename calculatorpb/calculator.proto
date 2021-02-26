@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package calculator;
+
+option go_package="gitlab.com\\tleuzhan13\\grpc-go-course\\greet\\greetpb;greetpb";
+
+message DecomposeRequest {
+    int64 num = 1;
+}
+
+message DecomposeResponse {
+    int64 decompose = 1;
+}
+
+message AverageRequest{
+    float num = 1;
+}
+
+message AverageRequest{
+    float avg = 1;
+}
+
+service CalculatorService {
+    rpc Decomposition(DecomposeRequest) returns (stream DecomposeResponse) {}
+    rpc Average(stream AverageRequest) returns (AverageRequest
+}
+
